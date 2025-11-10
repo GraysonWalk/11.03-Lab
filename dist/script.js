@@ -10,7 +10,7 @@ function domLoaded() {
 
   taskInput.addEventListener("keyup", function(event) {
     if (event.key === "Enter") {
-      addClick();
+      addBtnClick();
     }
   });
   
@@ -20,14 +20,13 @@ function domLoaded() {
   doneButtons.forEach(btn => btn.addEventListener("click", removeTask));
 }
 
-function addClick() {
+function addBtnClick() {
   const taskInput = document.getElementById("taskInput");
   const newTask = taskInput.value.trim();
 
   // Doesn't allow empty tasks
-  if (newTask === "") {
+  if (newTask === "")
     return; 
-  }
 
   // Calls addTask before resetting taskInput
   addTask(newTask);
